@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     let truck = new truck_1.Truck(socket.id, "New", 0, 0, 0, "#000000");
     truck_1.allTrucks.push(truck);
     io.emit('allTrucks', truck_1.allTrucks);
-    // Handle new bids
+    // Handle move truck
     socket.on('moveTruck', (data) => {
         let truck = truck_1.allTrucks.find((truck) => truck.id === data.id);
         if (!truck) {

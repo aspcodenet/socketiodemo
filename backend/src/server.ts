@@ -24,7 +24,7 @@ io.on('connection', (socket: Socket) => {
   io.emit('allTrucks', allTrucks);
 
 
-  // Handle new bids
+  // Handle move truck
   socket.on('moveTruck', (data: { id: string; name: string, x:number, y:number, angle:number, color:string }) => {
     let truck = allTrucks.find((truck) => truck.id === data.id);
     if(!truck){
